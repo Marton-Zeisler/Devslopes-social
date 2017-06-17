@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina4_7" orientation="portrait">
+    <device id="retina3_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -18,14 +20,110 @@
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gFl-dZ-lIB" customClass="FancyView" customModule="devslopes_social" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="72"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="devslopes-logo" translatesAutoresizingMaskIntoConstraints="NO" id="m3K-2I-H1X">
+                                        <rect key="frame" x="85" y="11.5" width="150" height="49.5"/>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" red="0.011764705882352941" green="0.66274509803921566" blue="0.95686274509803915" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstItem="m3K-2I-H1X" firstAttribute="centerY" secondItem="gFl-dZ-lIB" secondAttribute="centerY" id="92f-ih-UuI"/>
+                                    <constraint firstItem="m3K-2I-H1X" firstAttribute="height" secondItem="gFl-dZ-lIB" secondAttribute="height" multiplier="0.7" id="AUS-Xh-LmR"/>
+                                    <constraint firstItem="m3K-2I-H1X" firstAttribute="centerX" secondItem="gFl-dZ-lIB" secondAttribute="centerX" id="e6k-jc-F2j"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QwC-EE-WQd">
+                                <rect key="frame" x="0.0" y="427" width="320" height="53"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="If you haven't signed in before, an account will be automatically created for you." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VcX-AE-6b8">
+                                        <rect key="frame" x="8" y="8" width="304" height="37"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.011764705882352941" green="0.66274509803921566" blue="0.95686274509803915" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="VcX-AE-6b8" secondAttribute="bottom" constant="8" id="Py5-Lw-KbM"/>
+                                    <constraint firstItem="VcX-AE-6b8" firstAttribute="top" secondItem="QwC-EE-WQd" secondAttribute="top" constant="8" id="o9a-Di-vE2"/>
+                                    <constraint firstItem="VcX-AE-6b8" firstAttribute="leading" secondItem="QwC-EE-WQd" secondAttribute="leading" constant="8" id="pLP-Q4-92T"/>
+                                    <constraint firstAttribute="trailing" secondItem="VcX-AE-6b8" secondAttribute="trailing" constant="8" id="zgU-gH-XVb"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select a sign in method" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y67-8j-61E">
+                                <rect key="frame" x="70.5" y="87" width="179" height="20"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email address" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="12a-Dk-n3C" customClass="FancyField" customModule="devslopes_social" customModuleProvider="target">
+                                <rect key="frame" x="36" y="287" width="248" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="BLz-Gd-eXl" customClass="FancyField" customModule="devslopes_social" customModuleProvider="target">
+                                <rect key="frame" x="36" y="332" width="248" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VZo-4o-y9h" customClass="FancyBtn" customModule="devslopes_social" customModuleProvider="target">
+                                <rect key="frame" x="36" y="377" width="248" height="34"/>
+                                <color key="backgroundColor" red="0.95686274509803915" green="0.2627450980392157" blue="0.21176470588235294" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <state key="normal" title="Sign in">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mk1-rY-yQh" customClass="RoundBtn" customModule="devslopes_social" customModuleProvider="target">
+                                <rect key="frame" x="100" y="132" width="120" height="120"/>
+                                <color key="backgroundColor" red="0.23137254900000001" green="0.34901960780000002" blue="0.59607843140000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="120" id="h9e-Q7-4rJ"/>
+                                    <constraint firstAttribute="height" constant="120" id="vnP-hw-2BN"/>
+                                </constraints>
+                                <state key="normal" image="f"/>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="Mk1-rY-yQh" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="18X-XA-DaX"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="VZo-4o-y9h" secondAttribute="trailing" constant="20" id="5cb-v2-sMk"/>
+                            <constraint firstItem="y67-8j-61E" firstAttribute="top" secondItem="gFl-dZ-lIB" secondAttribute="bottom" constant="15" id="5tM-Ub-nUm"/>
+                            <constraint firstAttribute="trailing" secondItem="gFl-dZ-lIB" secondAttribute="trailing" id="9oK-g4-6vK"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="BLz-Gd-eXl" secondAttribute="trailing" constant="20" id="BM5-SG-mkf"/>
+                            <constraint firstAttribute="trailing" secondItem="QwC-EE-WQd" secondAttribute="trailing" id="BNg-Ff-63C"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="QwC-EE-WQd" secondAttribute="bottom" id="CtD-Em-TGx"/>
+                            <constraint firstItem="VZo-4o-y9h" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="20" id="Ele-Fa-trD"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="12a-Dk-n3C" secondAttribute="trailing" constant="20" id="MdL-RF-FTl"/>
+                            <constraint firstItem="gFl-dZ-lIB" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.15" id="MoH-ys-8EE"/>
+                            <constraint firstItem="y67-8j-61E" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="N5F-Ha-D8f"/>
+                            <constraint firstItem="QwC-EE-WQd" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.11" id="RO9-xL-JNP"/>
+                            <constraint firstItem="12a-Dk-n3C" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="20" id="Uvu-lD-1El"/>
+                            <constraint firstItem="12a-Dk-n3C" firstAttribute="top" secondItem="Mk1-rY-yQh" secondAttribute="bottom" constant="35" id="Uwo-ic-K2T"/>
+                            <constraint firstItem="BLz-Gd-eXl" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="20" id="cqg-Wx-fO6"/>
+                            <constraint firstItem="Mk1-rY-yQh" firstAttribute="top" secondItem="y67-8j-61E" secondAttribute="bottom" constant="25" id="e2y-4K-0XD"/>
+                            <constraint firstItem="gFl-dZ-lIB" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="hCL-q2-ehY"/>
+                            <constraint firstItem="gFl-dZ-lIB" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="kiI-K7-Py6"/>
+                            <constraint firstItem="QwC-EE-WQd" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="sp4-2b-rlv"/>
+                            <constraint firstItem="BLz-Gd-eXl" firstAttribute="top" secondItem="12a-Dk-n3C" secondAttribute="bottom" constant="15" id="t2Z-3f-b5O"/>
+                            <constraint firstItem="VZo-4o-y9h" firstAttribute="top" secondItem="BLz-Gd-eXl" secondAttribute="bottom" constant="15" id="zGV-lL-fwE"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-111" y="67"/>
+            <point key="canvasLocation" x="-532.5" y="105"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="devslopes-logo" width="150" height="94"/>
+        <image name="f" width="352" height="328"/>
+    </resources>
 </document>
