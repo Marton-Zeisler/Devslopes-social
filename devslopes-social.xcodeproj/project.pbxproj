@@ -16,6 +16,7 @@
 		3B6483631EF5FC44006604EC /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3B6483621EF5FC44006604EC /* Default-568h@2x.png */; };
 		3B6483651EF6A950006604EC /* FeedVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B6483641EF6A950006604EC /* FeedVC.swift */; };
 		3B6483671EF6DE39006604EC /* PostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B6483661EF6DE39006604EC /* PostCell.swift */; };
+		3B64836A1EF6F5E7006604EC /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B6483691EF6F5E7006604EC /* DataService.swift */; };
 		3B9BA10F1EF5C7D6004AC913 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B9BA10E1EF5C7D6004AC913 /* AppDelegate.swift */; };
 		3B9BA1111EF5C7D6004AC913 /* SignInVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B9BA1101EF5C7D6004AC913 /* SignInVC.swift */; };
 		3B9BA1141EF5C7D6004AC913 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3B9BA1121EF5C7D6004AC913 /* Main.storyboard */; };
@@ -35,6 +36,7 @@
 		3B6483621EF5FC44006604EC /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-568h@2x.png"; path = "../Default-568h@2x.png"; sourceTree = "<group>"; };
 		3B6483641EF6A950006604EC /* FeedVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedVC.swift; sourceTree = "<group>"; };
 		3B6483661EF6DE39006604EC /* PostCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostCell.swift; sourceTree = "<group>"; };
+		3B6483691EF6F5E7006604EC /* DataService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
 		3B9BA10B1EF5C7D6004AC913 /* devslopes-social.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "devslopes-social.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3B9BA10E1EF5C7D6004AC913 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3B9BA1101EF5C7D6004AC913 /* SignInVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInVC.swift; sourceTree = "<group>"; };
@@ -67,6 +69,14 @@
 				3B6483621EF5FC44006604EC /* Default-568h@2x.png */,
 			);
 			name = Util;
+			sourceTree = "<group>";
+		};
+		3B6483681EF6F527006604EC /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				3B6483691EF6F5E7006604EC /* DataService.swift */,
+			);
+			name = Services;
 			sourceTree = "<group>";
 		};
 		3B929C351EF5C9F30043FCA2 /* Model */ = {
@@ -119,6 +129,7 @@
 		3B9BA10D1EF5C7D6004AC913 /* devslopes-social */ = {
 			isa = PBXGroup;
 			children = (
+				3B6483681EF6F527006604EC /* Services */,
 				3B929C371EF5C9FD0043FCA2 /* Controller */,
 				3B929C361EF5C9F90043FCA2 /* View */,
 				3B929C351EF5C9F30043FCA2 /* Model */,
@@ -281,6 +292,7 @@
 				3B9BA1111EF5C7D6004AC913 /* SignInVC.swift in Sources */,
 				3B64835E1EF5E348006604EC /* CircleView.swift in Sources */,
 				3B9BA10F1EF5C7D6004AC913 /* AppDelegate.swift in Sources */,
+				3B64836A1EF6F5E7006604EC /* DataService.swift in Sources */,
 				3B6483561EF5E261006604EC /* FancyView.swift in Sources */,
 				3B6483611EF5E348006604EC /* RoundBtn.swift in Sources */,
 				3B6483601EF5E348006604EC /* FancyField.swift in Sources */,

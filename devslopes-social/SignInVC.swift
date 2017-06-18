@@ -65,9 +65,8 @@ class SignInVC: UIViewController {
                 
                 
                 if let user = user {
-                    //let userData = ["provider": credential.provider]
-                    //self.completeSignIn(id: user.uid, userData: userData)
-                    self.completeSignIn(id: user.uid)
+                    let userData = ["provider": credential.provider] // provider comes from firebase database structure
+                    self.completeSignIn(id: user.uid, userData: userData)
                 }
                 
                 
@@ -84,9 +83,8 @@ class SignInVC: UIViewController {
                     print("Marton: Email user authenticated with Firebase")
                     
                     if let user = user {
-                        //let userData = ["provider": user.providerID]
-                        //self.completeSignIn(id: user.uid, userData: userData)
-                        self.completeSignIn(id: user.uid)
+                        let userData = ["provider": user.providerID]
+                        self.completeSignIn(id: user.uid, userData: userData)
                     }
                     
                     
@@ -97,9 +95,8 @@ class SignInVC: UIViewController {
                         }else{
                             print("Marton: Successfully authenticated with Firebase")
                             if let user = user {
-                                //let userData = ["provider": user.providerID]
-                                //self.completeSignIn(id: user.uid, userData: userData)
-                                self.completeSignIn(id: user.uid)
+                                let userData = ["provider": user.providerID]
+                                self.completeSignIn(id: user.uid, userData: userData)
                             }
                             
                         }
@@ -113,10 +110,9 @@ class SignInVC: UIViewController {
     } // end of func
     
     
-//    func completeSignIn(id: String, userData: Dictionary<String, String>) {
-      func completeSignIn(id: String)  {
+       func completeSignIn(id: String, userData: Dictionary<String, String>) {
         
-        //DataService.ds.createFirbaseDBUser(uid: id, userData: userData)
+        DataService.ds.createFirbaseDBUser(uid: id, userData: userData)
 
         let keychainResult = KeychainWrapper.standard.set(id, forKey: KEY_UID)
         
