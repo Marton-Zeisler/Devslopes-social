@@ -30,8 +30,6 @@ class SignInVC: UIViewController {
             print("Marton: ID found in keychain")
             performSegue(withIdentifier: "goToFeed", sender: nil)
         }
-        
-        
     }
     
     
@@ -65,7 +63,7 @@ class SignInVC: UIViewController {
                 
                 
                 if let user = user {
-                    let userData = ["provider": credential.provider] // provider comes from firebase database structure
+                    let userData = ["provider": credential.provider] // "provider" comes from firebase database structure
                     self.completeSignIn(id: user.uid, userData: userData)
                 }
                 
