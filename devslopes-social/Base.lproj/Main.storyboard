@@ -71,7 +71,7 @@
                                 <rect key="frame" x="36" y="332" width="248" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VZo-4o-y9h" customClass="FancyBtn" customModule="devslopes_social" customModuleProvider="target">
                                 <rect key="frame" x="36" y="377" width="248" height="34"/>
@@ -80,6 +80,9 @@
                                 <state key="normal" title="Sign in">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="signInTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="lw8-RK-eiv"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mk1-rY-yQh" customClass="RoundBtn" customModule="devslopes_social" customModuleProvider="target">
                                 <rect key="frame" x="100" y="132" width="120" height="120"/>
@@ -119,6 +122,10 @@
                             <constraint firstItem="VZo-4o-y9h" firstAttribute="top" secondItem="BLz-Gd-eXl" secondAttribute="bottom" constant="15" id="zGV-lL-fwE"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="emailField" destination="12a-Dk-n3C" id="Pxq-v3-bvo"/>
+                        <outlet property="pwdField" destination="BLz-Gd-eXl" id="SU4-Zv-gD1"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
