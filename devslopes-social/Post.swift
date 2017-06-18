@@ -21,7 +21,7 @@ class Post{
         return _caption
     }
     
-    var imagesUrl: String{
+    var imageUrl: String{
         return _imageUrl
     }
     
@@ -35,7 +35,7 @@ class Post{
     
     init(caption: String, imageUrl: String, likes: Int){
         self._caption = caption
-        self._imageUrl = imageUrl
+        self._imageUrl = imageUrl // or just caption from udemy tutorial
         self._likes = likes
     }
     

@@ -21,6 +21,7 @@ class FeedVC: UIViewController, UITableViewDataSource, UITableViewDelegate, UIIm
     @IBOutlet weak var imageAdd: CircleView!
     
     
+    static var imageCache: NSCache<NSString, UIImage> = NSCache()
     
     
     
@@ -68,16 +69,21 @@ class FeedVC: UIViewController, UITableViewDataSource, UITableViewDelegate, UIIm
         
         let post = posts[indexPath.row]
         
-        if let cell = tableView.dequeueReusableCell(withIdentifier: "PostCell") as? PostCell{
-            cell.configureCell(post: post)
+        if let cell = tableView.dequeueReusableCell(withIdentifier: "PostCell") as? PostCell {
             
-            
+            if let img = FeedVC.imageCache.object(forKey: post.imageUrl as NSString) {
+                cell.configureCell(post: post, img: img)
+            } else {
+                cell.configureCell(post: post)
+            }
             return cell
-        }else{
+        } else {
             return PostCell()
         }
         
     }
+    
+    
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         if let image = info[UIImagePickerControllerEditedImage] as? UIImage{
